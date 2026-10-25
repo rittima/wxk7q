@@ -1,11 +1,10 @@
 # Wind forecast desk
+**Live app:** [https://wxk7q.vercel.app](https://wxk7q.vercel.app)
 
 A web app for a UK energy utility's day-ahead buying team. It answers two questions about national (GB) wind generation, using Elexon data only:
 
 1. **What is the latest wind forecast I can use when I have to decide?** For each delivery day D, the app shows the forecast with the newest publish time at or before a decision cutoff on D-1 (default 09:30 London time), with a 90% uncertainty band.
 2. **How accurate are those forecasts?** MAE, RMSE, bias and percentile errors, broken down by forecast age, time of day and delivery day, for all purchase decisions made in January 2026 (delivery days 2 Jan to 1 Feb).
-
-**Live app:** [https://wxk7q.vercel.app](https://wxk7q.vercel.app)
 
 ## AI tools disclosure
 
