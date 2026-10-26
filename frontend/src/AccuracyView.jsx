@@ -68,8 +68,8 @@ export default function AccuracyView({ cutoff }) {
             <YAxis tickFormatter={mw} tick={axis} width={56} />
             <Tooltip formatter={(v) => `${mw(v)} MW`} />
             <Legend />
-            <Bar dataKey="mae" name="Average miss" fill={BLUE} />
-            <Bar dataKey="rmse" name="RMSE" fill={GREY} />
+            <Bar dataKey="mae" name="Average miss" fill={BLUE} isAnimationActive animationDuration={1800} animationEasing="ease-out" />
+            <Bar dataKey="rmse" name="RMSE" fill={GREY} isAnimationActive animationDuration={2200} animationBegin={300} animationEasing="ease-out" />
           </BarChart>
         </Panel>
 
@@ -80,8 +80,8 @@ export default function AccuracyView({ cutoff }) {
             <YAxis tickFormatter={mw} tick={axis} width={56} />
             <Tooltip formatter={(v) => `${mw(v)} MW`} />
             <Legend />
-            <Bar dataKey="mae" name="Average miss" fill={BLUE} />
-            <Line dataKey="bias" name="Bias" stroke={GOLD} strokeWidth={2} dot={false} />
+            <Bar dataKey="mae" name="Average miss" fill={BLUE} isAnimationActive animationDuration={1800} animationEasing="ease-out" />
+            <Line dataKey="bias" name="Bias" stroke={GOLD} strokeWidth={2} dot={false} isAnimationActive animationDuration={2200} animationBegin={300} animationEasing="ease-out" />
           </ComposedChart>
         </Panel>
 
@@ -92,8 +92,8 @@ export default function AccuracyView({ cutoff }) {
             <YAxis tickFormatter={mw} tick={axis} width={56} />
             <Tooltip formatter={(v) => `${mw(v)} MW`} />
             <Legend />
-            <Bar dataKey="mae" name="Average miss" fill={BLUE} />
-            <Line dataKey="bias" name="Bias" stroke={GOLD} strokeWidth={2} dot={false} />
+            <Bar dataKey="mae" name="Average miss" fill={BLUE} isAnimationActive animationDuration={1800} animationEasing="ease-out" />
+            <Line dataKey="bias" name="Bias" stroke={GOLD} strokeWidth={2} dot={false} isAnimationActive animationDuration={2200} animationBegin={300} animationEasing="ease-out" />
           </ComposedChart>
         </Panel>
 
@@ -103,7 +103,7 @@ export default function AccuracyView({ cutoff }) {
             <XAxis dataKey="label" tick={axis} interval={histEvery - 1} />
             <YAxis tick={axis} width={48} />
             <Tooltip labelFormatter={(l) => `${signed(Number(l))} MW and above`} formatter={(v) => [v, "Half-hours"]} />
-            <Bar dataKey="count" fill={BLUE} />
+            <Bar dataKey="count" fill={BLUE} isAnimationActive animationDuration={2000} animationEasing="ease-out" />
           </BarChart>
         </Panel>
       </div>

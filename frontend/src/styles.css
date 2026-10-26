@@ -33,6 +33,12 @@ code { background: rgba(16, 42, 67, 0.08); padding: 0 4px; border-radius: 3px; f
 
 .app { max-width: 1180px; margin: 0 auto; padding: 28px 20px 64px; }
 .top { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: flex-end; margin-bottom: 20px; }
+.top > div { animation: header-enter 800ms cubic-bezier(0.2, 0.75, 0.25, 1) both; }
+.tabs { animation: header-enter 900ms 160ms cubic-bezier(0.2, 0.75, 0.25, 1) both; }
+@keyframes header-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 h1 { margin: 0; font-size: 2rem; font-weight: 700; line-height: 1.1; }
 .sub { margin: 6px 0 0; color: var(--muted); max-width: 60ch; }
 
@@ -42,7 +48,9 @@ button, nav a, [role="tab"] { cursor: pointer; }
   appearance: none; border: 0; background: none;
   padding: 10px 16px; font: inherit; font-weight: 600; color: var(--muted);
   border-bottom: 3px solid transparent; margin-bottom: -2px;
+  transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, transform 220ms ease;
 }
+.tabs button:hover { color: var(--forecast); background: rgba(16, 47, 92, 0.05); transform: translateY(-2px); }
 .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--actual); }
 button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid #d5ad26; outline-offset: 2px; }
 
@@ -108,4 +116,6 @@ select, input[type="time"], input[type="number"] {
   .chart.tall { height: 300px; }
   h1 { font-size: 1.6rem; }
 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

@@ -89,9 +89,9 @@ export default function DecisionView({ date, cutoff }) {
               <YAxis tickFormatter={mw} tick={{ fontSize: 12 }} width={64} label={{ value: "MW", angle: -90, position: "insideLeft", fontSize: 12 }} />
               <Tooltip content={<ChartTip showActuals={showActuals} />} />
               <Legend verticalAlign="top" height={28} />
-              <Area dataKey="band" name="Likely range (90%)" stroke="none" fill="#7897BD" fillOpacity={0.5} isAnimationActive={false} />
-              <Line dataKey="forecast" name="Forecast" stroke="#102F5C" strokeWidth={2.5} dot={false} isAnimationActive={false} />
-              {showActuals && <Line dataKey="actual" name="Actual" stroke="#B88700" strokeWidth={2} dot={false} isAnimationActive={false} />}
+              <Area dataKey="band" name="Likely range (90%)" stroke="none" fill="#7897BD" fillOpacity={0.5} isAnimationActive animationDuration={2000} animationEasing="ease-out" />
+              <Line dataKey="forecast" name="Forecast" stroke="#102F5C" strokeWidth={2.5} dot={false} isAnimationActive animationDuration={2400} animationEasing="ease-out" />
+              {showActuals && <Line dataKey="actual" name="Actual" stroke="#B88700" strokeWidth={2} dot={false} isAnimationActive animationDuration={2000} animationEasing="ease-out" />}
             </ComposedChart>
           </ResponsiveContainer>
         </div>
