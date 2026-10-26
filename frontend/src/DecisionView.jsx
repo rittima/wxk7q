@@ -84,14 +84,14 @@ export default function DecisionView({ date, cutoff }) {
         <div className="chart tall">
           <ResponsiveContainer>
             <ComposedChart data={pts} margin={{ top: 8, right: 16, bottom: 0, left: 8 }}>
-              <CartesianGrid stroke="#D6DEE4" vertical={false} />
+              <CartesianGrid stroke="#D6E0EC" vertical={false} />
               <XAxis dataKey="label" interval={5} tick={{ fontSize: 12 }} />
               <YAxis tickFormatter={mw} tick={{ fontSize: 12 }} width={64} label={{ value: "MW", angle: -90, position: "insideLeft", fontSize: 12 }} />
               <Tooltip content={<ChartTip showActuals={showActuals} />} />
               <Legend verticalAlign="top" height={28} />
-              <Area dataKey="band" name="Likely range (90%)" stroke="none" fill="#9CC3E6" fillOpacity={0.5} isAnimationActive={false} />
-              <Line dataKey="forecast" name="Forecast" stroke="#1F4E8C" strokeWidth={2.5} dot={false} isAnimationActive={false} />
-              {showActuals && <Line dataKey="actual" name="Actual" stroke="#E0701B" strokeWidth={2} dot={false} isAnimationActive={false} />}
+              <Area dataKey="band" name="Likely range (90%)" stroke="none" fill="#7897BD" fillOpacity={0.5} isAnimationActive={false} />
+              <Line dataKey="forecast" name="Forecast" stroke="#102F5C" strokeWidth={2.5} dot={false} isAnimationActive={false} />
+              {showActuals && <Line dataKey="actual" name="Actual" stroke="#B88700" strokeWidth={2} dot={false} isAnimationActive={false} />}
             </ComposedChart>
           </ResponsiveContainer>
         </div>

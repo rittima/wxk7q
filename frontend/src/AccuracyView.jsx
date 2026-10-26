@@ -3,8 +3,8 @@ import { getAccuracy } from "./api.js";
 import { useFetch } from "./hooks.js";
 import { dayLabel, mw, signed } from "./format.js";
 
-const BLUE = "#1F4E8C";
-const ORANGE = "#E0701B";
+const BLUE = "#102F5C";
+const GOLD = "#B88700";
 const GREY = "#7C8B97";
 const axis = { fontSize: 12 };
 
@@ -63,7 +63,7 @@ export default function AccuracyView({ cutoff }) {
       <div className="grid">
         <Panel title="Error by forecast age" note="Longer lead time, larger error. Late half-hours of the delivery day rely on older forecasts.">
           <BarChart data={data.by_horizon} margin={{ top: 8, right: 8, left: 8 }}>
-            <CartesianGrid stroke="#D6DEE4" vertical={false} />
+            <CartesianGrid stroke="#D6E0EC" vertical={false} />
             <XAxis dataKey="label" tick={axis} />
             <YAxis tickFormatter={mw} tick={axis} width={56} />
             <Tooltip formatter={(v) => `${mw(v)} MW`} />
@@ -75,31 +75,31 @@ export default function AccuracyView({ cutoff }) {
 
         <Panel title="Error by time of day" note="Local time on the delivery day. Bars: average miss. Line: bias.">
           <ComposedChart data={hours} margin={{ top: 8, right: 8, left: 8 }}>
-            <CartesianGrid stroke="#D6DEE4" vertical={false} />
+            <CartesianGrid stroke="#D6E0EC" vertical={false} />
             <XAxis dataKey="label" tick={axis} interval={1} />
             <YAxis tickFormatter={mw} tick={axis} width={56} />
             <Tooltip formatter={(v) => `${mw(v)} MW`} />
             <Legend />
             <Bar dataKey="mae" name="Average miss" fill={BLUE} />
-            <Line dataKey="bias" name="Bias" stroke={ORANGE} strokeWidth={2} dot={false} />
+            <Line dataKey="bias" name="Bias" stroke={GOLD} strokeWidth={2} dot={false} />
           </ComposedChart>
         </Panel>
 
         <Panel title="Error by delivery day" note="Some days are much harder to forecast than others.">
           <ComposedChart data={daily} margin={{ top: 8, right: 8, left: 8 }}>
-            <CartesianGrid stroke="#D6DEE4" vertical={false} />
+            <CartesianGrid stroke="#D6E0EC" vertical={false} />
             <XAxis dataKey="label" tick={axis} interval={2} />
             <YAxis tickFormatter={mw} tick={axis} width={56} />
             <Tooltip formatter={(v) => `${mw(v)} MW`} />
             <Legend />
             <Bar dataKey="mae" name="Average miss" fill={BLUE} />
-            <Line dataKey="bias" name="Bias" stroke={ORANGE} strokeWidth={2} dot={false} />
+            <Line dataKey="bias" name="Bias" stroke={GOLD} strokeWidth={2} dot={false} />
           </ComposedChart>
         </Panel>
 
         <Panel title="How big are the misses?" note="Number of half-hours by error size (MW). Left of zero: forecast too low.">
           <BarChart data={data.histogram} margin={{ top: 8, right: 8, left: 8 }}>
-            <CartesianGrid stroke="#D6DEE4" vertical={false} />
+            <CartesianGrid stroke="#D6E0EC" vertical={false} />
             <XAxis dataKey="label" tick={axis} interval={histEvery - 1} />
             <YAxis tick={axis} width={48} />
             <Tooltip labelFormatter={(l) => `${signed(Number(l))} MW and above`} formatter={(v) => [v, "Half-hours"]} />
