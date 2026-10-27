@@ -45,7 +45,7 @@ export default function App() {
             {tab === "decision" && (
               <label>
                 Delivery day
-                <select value={date || ""} onChange={(e) => setDate(e.target.value)}>
+                <select style={{ cursor: 'pointer' }} value={date || ""} onChange={(e) => setDate(e.target.value)}>
                   {meta.data.delivery_dates.map((d) => (
                     <option key={d} value={d}>
                       {d}
@@ -56,7 +56,7 @@ export default function App() {
             )}
             <label>
               Decision cutoff, London time on the day before
-              <input type="time" value={cutoff} onChange={(e) => e.target.value && setCutoff(e.target.value)} />
+              <input  type="time" value={cutoff} onChange={(e) => e.target.value && setCutoff(e.target.value)} />
             </label>
             <p className="hint">Only forecasts published at or before the cutoff are used.</p>
           </section>

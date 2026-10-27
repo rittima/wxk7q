@@ -29,6 +29,11 @@ h1, h2, .k-value {
   font-family: "Bricolage Grotesque", "Public Sans", system-ui, sans-serif;
   letter-spacing: -0.01em;
 }
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
 code { background: rgba(16, 42, 67, 0.08); padding: 0 4px; border-radius: 3px; font-size: 0.92em; }
 
 .app { max-width: 1180px; margin: 0 auto; padding: 28px 20px 64px; }
